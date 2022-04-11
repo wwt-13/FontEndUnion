@@ -1,0 +1,263 @@
+<!-- 告诉网页浏览器你的文件类型 -->
+<!DOCTYPE html>
+<!-- lang用于定义网页的语言，en代表的就是英文，中文的话就设置为zh -->
+<!-- 注意这里的英文中文啥的是设置给搜索引擎看的，设置成zh就是告诉搜索引擎你的网页是中文网页，也就更容易被中文搜索到，对于页面本身语言的显示并没有影响 -->
+<!-- 这些都是html规范，你的页面越规范，就越容易被搜索引擎所收录 -->
+<html lang="en">
+  <head>
+    <!-- 设置网页编码为utf-8 -->
+    <meta charset="UTF-8" />
+    <!-- viewport:视窗(就是网页可见的范围) width=device-width表示设定内容宽度为装置的宽度 initial-scale=1代表默认缩放倍数为1 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 这个配置就是让搜索引擎更方便的找到你的网站 -->
+    <meta name="robots" content="index, follow" />
+    <!-- 网站的基本介绍，搜索引擎会将其放在搜索出来的首页中 -->
+    <meta name="description" content="教导熊猫相关的基本知识" />
+    <!-- 定义网站的作者名 -->
+    <meta name="author" content="Wwt" />
+    <base target="_self" />
+    <!-- 设置个人网站的icon -->
+    <link rel="shortcut icon" href="../images/panda.jpg" />
+    <link rel="bookmark" href="../images/panda.jpg" />
+    <!-- title就是你网页的标题 -->
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../CSS/hello-standard.css" />
+  </head>
+  <body>
+    <script>
+      function showpassword() {
+        let x = document.getElementById("password");
+        alert(x.type);
+        if (x.type === "password") {
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+      }
+    </script>
+    <h1
+      class="heading"
+      style="color: rgb(83, 87, 49)"
+      onclick="alert('You have just clicked the h1 tag')"
+    >
+      保护熊猫
+    </h1>
+
+    <!-- <p id="lorem">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate
+      consectetur doloremque neque rem hic. Eaque architecto iure iusto
+      sapiente, optio nesciunt mollitia blanditiis porro doloribus
+      exercitationem reprehenderit culpa illum ea magnam cum incidunt? Omnis
+      illum officia molestiae iusto vitae rerum?
+    </p> -->
+
+    <!-- 未来onclick部分将由js负责，style部分由css负责 -->
+    <p>
+      大熊猫（学名：Ailuropoda
+      melanoleuca），也称作大猫熊，一般称为“熊猫”或“猫熊”，属于食肉目熊科的一种哺乳动物，体色为黑白两色。熊猫是中国特有物种，现存的主要栖息地是中国中西部四川盆地周边的山区和陕西南部的秦岭地区。全世界野生大熊猫现存大约有2060头（2016年数据[2]）。2016年末，世界自然保护联盟（IUCN）将大熊猫的受威胁等级从“濒危级”降为“易危级”。[3]由于生育率低，大熊猫在中国濒危动物红皮书等级中评为濒危物种，为中国大陆国宝。大熊猫被誉为生物界的活化石[4]。
+    </p>
+    <p>
+      大熊猫黑白相间的毛色和憨态可掬的外表使其深受人们喜爱，在全世界亦有大量粉丝。在1961年世界自然基金会成立时就以大熊猫为标志，大熊猫俨然已成为了濒危物种保护最重要的象征；大熊猫也是中国在外交活动中向对方表示友好的重要代表，美国国际政治学者约瑟夫·奈尔更直言大熊猫被视为中国拓展软实力的重要支柱，与英国的皇室家族有着异曲同工之妙[5]。
+    </p>
+    <!-- 六种标题大小 -->
+    <h2 class="blueHead largeHead">熊猫习性1</h2>
+    <h3 class="blueHead largeHead">熊猫习性2</h3>
+    <h4 class="blueHead">熊猫习性3</h4>
+    <h5 class="blueHead">熊猫习性4</h5>
+    <img
+      style="width: 300px; height: 400px"
+      src="../images/panda.jpg"
+      alt="panda"
+    />
+    <img
+      style="width: 300px; height: 400px"
+      src="../images/panda.jpg"
+      alt="panda2"
+    />
+    <br />
+    <div class="link1">
+      <a
+        href="https://git.acwing.com/a_little_buaaer/js-study/-/tree/passenger-counter"
+        target="_blank"
+        >Acwing</a
+      >
+    </div>
+    <div class="link2">
+      <a href="https://www.baidu.com">test1</a>
+      <a href="https://www.baidu.com" target="_self">百度百科</a>
+    </div>
+
+    <h2>熊猫表格</h2>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">test1</th>
+          <th rowspan="2">test2</th>
+        </tr>
+        <tr>
+          <!-- 这样写总标题的话，只会显示1格 -->
+          <!-- <th>熊猫国家表格</th> -->
+          <!-- colspan=k代表横跨多少格 -->
+          <th colspan="2">熊猫国家表格</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>国家</th>
+          <th>年份</th>
+          <th>熊猫</th>
+        </tr>
+        <tr>
+          <td>墨西哥</td>
+          <td>1975</td>
+          <td>盈盈、贝贝</td>
+        </tr>
+        <tr>
+          <td>台湾</td>
+          <td>2008</td>
+          <td>远远、拉阿鲁</td>
+        </tr>
+        <tr>
+          <td>日本</td>
+          <td>2011</td>
+          <td>比例、仙女</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <form action="" method="get">
+      <!-- 传递给后端的格式是"name"=value -->
+      <!-- for就是链接对应id的input的 -->
+      <label for="name">姓名</label>
+      <!-- name可以说是input标签中最重要的标签属性，因为只有设置了name属性的input标签中输入的内容才会被传到网页的后端进行数据处理 -->
+      <!-- required代表必须要求有输入值 -->
+      <!-- placeholder中放入提示信息 -->
+      <input
+        id="name"
+        type="text"
+        name="myname"
+        placeholder="请输入真实姓名"
+        required
+      />
+      <br />
+      <label for="telephone">电话</label>
+      <input id="telephone" type="text" name="mytelephone" />
+      <br />
+      <label for="age">年龄</label>
+      <!-- 输入数字，min/max设定最大数字,step代表每次调正的大小 -->
+      <input
+        type="number"
+        id="age"
+        value="18"
+        min="0"
+        max="150"
+        step="0.01"
+        required
+      />
+      <br />
+      <label for="emial">emial</label>
+      <input
+        type="email"
+        id="emial"
+        name="myemail"
+        value="123431@qq.com"
+        required
+      />
+      <br />
+      <label for="password">密码</label>
+      <input
+        type="password"
+        id="password"
+        value="123456"
+        minlength="5"
+        maxlength="12"
+        required
+      />
+      <input id="showpassword" type="checkbox" onclick="showpassword()" />
+      <label for="showpassword">显示密码</label>
+      <br />
+      <label for="checkbox">是否订阅电子报</label>
+      <!-- checkbox传给后端的值取决于value属性(其实就是预设的默认值)中设定的值（如果不设定的话，会默认传给后端"name"=on） -->
+      <input
+        id="checkbox"
+        type="checkbox"
+        name="mycheckbox"
+        value="yes"
+        checked
+      />
+      <br />
+      <label for="range">range</label>
+      <!-- 其实这个range非常类似于type=number的变形 -->
+      <input id="range" type="range" value="25" step="15" />
+      <br />
+      <div>
+        <input type="checkbox" id="Java" checked />
+        <label for="Java">Java</label>
+      </div>
+      <div>
+        <input type="checkbox" id="C" />
+        <label for="C++">C++</label>
+      </div>
+      <div>
+        <!-- name相同的，要求选择只需要在其中之一添加required即可 -->
+        <input type="radio" id="Test" name="test" />
+        <label for="Test">Test</label>
+      </div>
+      <div>
+        <input type="radio" id="Test1" name="test" checked />
+        <label for="Test1">Test1</label>
+      </div>
+      <!-- 下拉选择表单控件 -->
+      <select name="select-test" id="">
+        <option value="test1">t1</option>
+        <option value="test2" selected>t2</option>
+      </select>
+      <br />
+      <label for="file">个人档案</label>
+      <input type="file" id="file" />
+      <br />
+
+      <label for="gender">性别</label>
+      <select name="gender" id="gender">
+        <!-- 防止漏选 -->
+        <option value=""></option>
+        <option value="male" required>male</option>
+        <option value="female">female</option>
+        <option value="other">other</option>
+      </select>
+      <br />
+      <!-- 假设现在要获取填表人的地址 -->
+      <!-- 此时可以使用datalist，并且该tag自带数据查询 -->
+      <label for="area">地区</label>
+      <input type="text" list="arealist" id="area" name="area" />
+      <datalist id="arealist">
+        <option value="北京">北京市</option>
+        <option value="南京">南京市</option>
+        <option value="杭州">杭州市</option>
+        <option value="金华">金华市</option>
+      </datalist>
+      <br />
+      <label for="suggestion">提出建议</label>
+      <br />
+      <textarea
+        name="suggestion"
+        id="suggestion"
+        cols="30"
+        rows="10"
+        placeholder="您可以输入您的建议"
+      ></textarea>
+      <br />
+      <button type="submit">提交表单</button>
+      <hr />
+    </form>
+    <!-- entity codes使用 -->
+    <h1 id="redh1">&#9824;</h1>
+  </body>
+</html>
