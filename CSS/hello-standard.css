@@ -1,5 +1,41 @@
-body {
-    background-image: url("../images/inherited.png");
-    background-size: cover;
-    background-position: center;
+h2.box {
+    background-color: aqua;
 }
+
+h1 {
+    background-color: brown;
+    color: azure;
+    padding: 1rem 2rem;
+    margin: 1rem 2rem;
+    border: 10px ridge green;
+}
+
+img {
+    height: 300px;
+    width: 400px;
+}
+
+a.survy {
+    background-color: aqua;
+    margin: 2rem 4rem;
+}
+
+div.link1 {
+    width: 50vw;
+    background-color: blanchedalmond;
+}
+
+/* a {
+    background-color: rgb(194, 123, 200);
+    color: aliceblue;
+    text-decoration: none;
+    display: block;
+    padding: 1rem 2rem;
+    margin: 1rem 2rem;
+    height: 5vh;
+    width: 8vw;
+} */
+
+/* a:hover {
+    background-color: bisque;
+} */

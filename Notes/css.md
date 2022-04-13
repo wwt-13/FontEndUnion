@@ -159,6 +159,122 @@ css中有两种单位
 
 background可以代表background-color以及background-image
 
+### css box model
+
+> css中最重要的模型
+
+一个box包含了content，content外是border，content和border之间的距离是padding，border和其他块之间的距离就叫margin
+
+> **所有html element都是box**
+> width、height、content、border、padding、margin(这些东西所有html tag都具备！！！)
+
+padding快速设定方式
+
+```css
+//分别代表上、右、下、左
+padding: 2px 10px 6px 12px;
+//分别代表上下
+padding: 2px 4px;
+//一起设置
+padding: 20px;
+```
+
+margin的设定和padding基本类似
+
+border的设定
+可见MDN文档https://developer.mozilla.org/zh-CN/docs/Web/CSS/border
+
+可以对tag设定width和height(会改变块级元素和内联元素)
+
+### Relative units(相对单位)
+
+> %,vw,vh
+
+> viewpoint指的是人所看见的界面大小，该大小会随着界面的缩放而该改变
+
+1. %:设置width,height的时候要相对于该tag的parent tag的width和height
+2. vw(viewpoint width):viewpoint电脑的界面大小,设置为10vw,等价于设置10%*viewpoint
+3. vh(viewpoint height):类比vw
+
+问题：设定width和height属性为10vw、10vw，但是拖拉页面大小，元素大小却不会发生改变(解释见下方)
+
+### block vs inline
+
+二者在排版上的差别
+1. block element width by default = 100% of parent element
+2. inline element 不能设定width和height(不能设定指的是，不论对inline element的height、width做什么设定，浏览器都不会将该设定应用到网页排版上面)
+
+所以应该如何修改css是的inline element能修改width和height呢？
+这就涉及到了css中的一个重要属性*display*
+
+### Display
+
+> display就是展示展现的意思
+
+> html中的标签分为inline、block,但实际上我们是可以通过修改对应的属性对tag预设的属性值进行更换
+
+问题：img明明是inline element，但是我们却可以在css中对其进行height和width属性值的设定
+
+这就是因为**inline-block**,它既是inline element,也是block element
+
+先来看inline-block的inline部分
+
+首先inline element的初始宽度是由它的content决定的，举个例子，a tag的初始宽度就由其网站长度决定
+所以说，对于inline element而言，只要它的宽度没由超过网页的宽度，它是会从左到右不断排列下去的
+
+再来看block element，区别就是它可以设定width和height
+
+而inline-block这个属性就是inline和block的混合
+1. 在网页排版上，符合inline的排版方式
+2. 在width和height的设定上，又符合block的设定方式
+
+总共5个inline-block tag
+1. **img**
+2. **input**
+3. **button**
+4. **select**
+5. **textarea**
+
+### margin进阶
+
+> 可以为任何tag设定margin属性，但是对于inline tag而言，margin的高度不会产生任何作用（W3C网站上有，W3C是定义html规范的网站，有什么具体细节不理解的地方都可以去上面查看相关文档）
+
+![](../images/margin.png)
+
+### CSS Position
+
+> CSS元素的位置，它们互相排版的相对位置
+
+上面的三个很少用到
+但是没用为啥要学捏？
+因为它们跟css的背后逻辑有关，理解认识它们有助于理解认识css的背后逻辑
+1. static:静态的，是css中默认的预设值，任何css中的元素，未设定状态下都是static位置
+   - The element is positioned according to the normal flow of the document.
+   css中的排版，inline默认左到右，block默认上到下
+   - No Stacking context.(暂时不理解)
+
+2. relative
+   - relative to itself(相对于它自己) based on the values of top,right,bottom,and left.
+   - Stacking context!
+   ```css
+      position: relative;
+      top: 200px;距离顶部下移200px
+      /* bottom,left,right,top */
+   ```
+   如何解决元素覆盖的问题
+   使用`z-index`，z-index越大，它就越处于视图的顶层
+   但是有时候`z-index`会失效，这是为什么呢？
+   因为`z-index`对于默认的static是无效的，对于position为其他的值都有效
+3. absolute
+   
+4. **Fixed**
+5. **Sticky**
+
+### CSS中的x,y,z轴
+
+x,y轴就是页面轴，z轴则是从平面中投射出来的轴
+
+css属性`z-index`
 # 杂
 
 ## em和rem的区别
