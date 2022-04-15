@@ -8,6 +8,8 @@ h1 {
     padding: 1rem 2rem;
     margin: 1rem 2rem;
     border: 10px ridge green;
+    opacity: 0.9;
+    cursor: wait;
 }
 
 img {
@@ -23,6 +25,47 @@ a.survy {
 div.link1 {
     width: 50vw;
     background-color: blanchedalmond;
+}
+
+/* table styling */
+table,
+th,
+td {
+    border-bottom: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th,
+td {
+    padding: 0.5rem 0.75rem;
+}
+
+th {
+    background-color: aquamarine;
+    color: aliceblue;
+    font-size: 1.5rem;
+}
+
+td {
+    /* properity name */
+    transition: all 1s ease-in;
+    /* transition: color 1s; */
+    /* 比较奇怪的一点，background-color和color的转场效果相互覆盖了 */
+    /* 这是因为transition会互相覆盖，这里需要设置为all(套用给所有属性) */
+    /* duration */
+    /* timing function */
+    /* timing function 就是用于调整动画和时间播放速度的关系的 */
+}
+
+td:hover {
+    background-color: grey;
+    color: bisque;
+}
+
+table {
+    height: 300px;
+    width: 400px;
 }
 
 /* a {

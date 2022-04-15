@@ -2,11 +2,13 @@ div.container {
     width: 500px;
     height: 2000px;
     background-color: black;
+    margin: 0px;
 }
 
 div.box {
     width: 200px;
     height: 200px;
+    /* position: relative; */
 }
 
 .box1 {
@@ -15,10 +17,33 @@ div.box {
 
 .box2 {
     background-color: rgb(173, 236, 173);
-    position: relative;
-    left: 200px;
+    /* position: relative;
+    left: 200px; */
+    /* position: absolute;
+    bottom: 0px;
+    right: 0px; */
+    /* 突然发现box3不见了 */
+    /* 
+    前面解释过,将position设置为absolute后，蓝色格子会往上移，因为绿色此时已经不在css的normal flow中了(在它自己的空间中,不影响其他元素的排版)
+    因为box没有设置position，所以绿色格子会默认选择initial containing block(view point?)
+    */
+    position: sticky;
+    top: 0px;
 }
 
 .box3 {
     background-color: rgb(158, 158, 241);
+    /* position: fixed;
+    top: 0px;
+    left: 200px; */
+}
+
+/* ul设定 */
+ul.ul-test {
+    list-style-type: square;
+}
+
+/* ol设定 */
+ol.ol-test {
+    list-style-type: upper-roman;
 }

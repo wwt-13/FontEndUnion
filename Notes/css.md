@@ -266,19 +266,103 @@ border的设定
    但是有时候`z-index`会失效，这是为什么呢？
    因为`z-index`对于默认的static是无效的，对于position为其他的值都有效
 3. absolute
-   
+   用于设定绝对位置
+   1. The element is removed from the normal document flow, and no space is created
+      for the element in the page layout.(比较抽象,还是需要通过实际的操作来进行理解)
+      该元素从正常的文档流中移除，并且在页面布局中不为该元素创建空间
+   2. It is positioned relative to its closest positioned parent element, if any. 
+   3. otherwise,it is placed relative to **the initial containing block**(指的是网页最上方的视窗，往下滑即不可见).Its final position is determined by the values of top,right,bottom,and left.
+   4. Stacking context!(~~这东西还是不知道是啥~~现在知道了,有Stacking context就代表可以设定z-index)
+      Stacking context是堆叠上下文的意思
 4. **Fixed**
+   固定的，通常用于导航页
+   1. The element is removed form the normal doucment flow, and no space is created
+      for the element in the page layout.
+   2. It is positioned relative to **the initial containing block** established by the **viewport**.(和absolute的不同点，向下滑该固定tag仍然包含在页面上)
+   3. Stacking context!(支持`z-index`)
 5. **Sticky**
-
+   1. The element is positioned according to the normal flow of the document, and then offset
+      relative to its nearest scrolling ancestor and containing block(nearest block-level ancestor),
+      including table-related elements, based on the values of top,right,bottom and left.
+   2. Stacking context!
+   Sticky同样非常常用于制作导航栏
 ### CSS中的x,y,z轴
 
 x,y轴就是页面轴，z轴则是从平面中投射出来的轴
 
 css属性`z-index`
+
+### CSS Default Styling
+
+> 这讲谈论css中的的默认设定
+> 比方说h1-h6的默认font-size,font-weight设定
+
+那么去哪里找这些默认属性呢？
+1. W3School
+2. Broswer+F12
+
+### List Styling
+
+> 讲讲如何在css中改变ul、ol的样式
+> 使用list-style-type
+
+### Table Styling
+
+- border-collapse:用来决定表格的边框是分开的还是合并的
+- border
+- padding
+- width
+- height
+- ....
+
+### Opacity and Cursor Pointer
+
+> 不透明度和光标指针
+
+- opacity:0-1(貌似是所有tag都可以设定的)
+- cursor:设置鼠标,移动到该tag的时候改变样式
+  比方说a标签预设了cursor: pointer;(鼠标移上去的时候默认变成pointer)
+
+### Transition Introduction
+
+> 貌似是老师非常喜欢的一个属性:transition(转场)
+> CSS transitions provide a way to control animation speed when changing CSS properties.
+> CSS transitions 提供了一种在更改 CSS 属性时控制动画速度的方法
+
+#### Transition Syntax
+
+- property name:属性名
+- duration:时间
+- timing function
+
+### 2D Transform
+
+> transform转变
+> 需要配合translate使用(否则会瞬间转变)
+
+- translate():移动(不是翻译)
+- rotate():旋转
+- scale():放大或缩小
+
+### 3D Transform
+
+> 这里只介绍三种
+
+1. rotateX()
+2. rotateY()
+3. rotateZ()
+
+### Animation(动画)
+
+> 前面讲了2D+3D transform+transition,已经可以做出一些简单的动画效果了
+> 但是如果想要做出更加复杂的动画效果，就需要对CSS的Animation进行深入的了解
+
+> 举个例子，箱子从左上角移动到右下角，并且颜色改变成从蓝色改变成绿色
+
 # 杂
 
 ## em和rem的区别
 
 - 共同点:都是相对大小
 - em:相对的是父元素
-- rem:相对的是根元素
+- **rem:相对的是根元素**(使用较多)
